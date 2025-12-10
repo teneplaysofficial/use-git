@@ -1,9 +1,13 @@
+import { Commit } from "./lib/commit";
 import { Base } from "./utils/base";
 
 export class useGit extends Base {
-  constructor(opts: { cwd?: string } = {}) {
-    const { cwd = process.cwd() } = opts;
-    super(cwd);
+  commit: Commit;
+
+  constructor(opts: { cwd?: string } = { cwd: process.cwd() }) {
+    super(opts.cwd);
+
+    this.commit = new Commit(this);
   }
 }
 
