@@ -9,7 +9,7 @@ export abstract class Base {
   }
 
   runCmd(
-    categ: Category,
+    categ: Category | "",
     args: string[] = [],
     opts: { graceful?: boolean } = {
       graceful: false,
