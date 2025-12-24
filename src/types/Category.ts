@@ -17,6 +17,7 @@ export type Category =
   | "rebase"
   | "remote"
   | "reset"
+  | "rev-parse"
   | "restore"
   | "revert"
   | "rm"

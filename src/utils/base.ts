@@ -8,14 +8,12 @@ export abstract class Base {
     this.cwd = cwd;
   }
 
-  runCmd(
-    categ: Category | "",
-    args: string[] = [],
-    opts: { graceful?: boolean } = {
-      graceful: false,
-    }
-  ): Promise<string | boolean> {
-    const cmd = ["git", categ, ...(args ?? [])].filter(Boolean).join(" ");
+  private buildCmd(categ: Category | "", args: string[] = []): string {
+    return ["git", categ, ...(args ?? [])].filter(Boolean).join(" ");
+  }
+
+  runCmd(categ: Category | "", args: string[] = []): Promise<string> {
+    const cmd = this.buildCmd(categ, args);
 
     return new Promise((resolve, reject) => {
       exec(
@@ -25,8 +23,6 @@ export abstract class Base {
         },
         (err, stdout, stderr) => {
           if (err) {
-            if (opts.graceful) return resolve(false);
-
             return reject(
               new Error(
                 `Error executing command:\n${cmd}\n${stderr || err.message}`
@@ -34,13 +30,24 @@ export abstract class Base {
             );
           }
 
-          if (opts.graceful) {
-            return resolve(true);
-          }
-
           resolve(stdout.trim());
         }
       );
+    });
+  }
+
+  /**
+   * Execute a git command and return success state
+   *
+   * @returns {Promise<boolean>} - true if command succeeded, false otherwise
+   */
+  runCmdSafe(category: Category | "", args: string[] = []): Promise<boolean> {
+    const cmd = this.buildCmd(category, args);
+
+    return new Promise((resolve) => {
+      exec(cmd, { cwd: this.cwd }, (err) => {
+        resolve(!err);
+      });
     });
   }
 }
