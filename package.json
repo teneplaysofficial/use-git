@@ -39,7 +39,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "release-hub": "^1.0.0-beta.0",
-    "tsdown": "^0.17.0",
+    "tsdown": "^0.18.0",
     "typescript": "^5.9.3"
   }
 }
