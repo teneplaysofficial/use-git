@@ -1,5 +1,5 @@
 import { exec } from "node:child_process";
-import { Category } from "../types/Category";
+import { Category } from "../types";
 
 export abstract class Base {
   cwd: string;

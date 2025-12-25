@@ -1,4 +1,4 @@
-import { InitOptions } from "../types/Init";
+import { InitOptions } from "./init.types";
 import { Base } from "../utils/base";
 
 export class Init {
