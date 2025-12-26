@@ -41,7 +41,7 @@
     "lint": "biome check"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,json,md}": [
+    "*.{ts,js,json}": [
       "biome check --write"
     ]
   },
