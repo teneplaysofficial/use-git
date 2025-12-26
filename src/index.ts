@@ -5,6 +5,11 @@ import { Init } from "./lib/init";
 import { Base } from "./utils/base";
 
 export class useGit extends Base {
+  /**
+   * List, create, or delete branches.
+   *
+   * {@link https://git-scm.com/docs/git-branch}
+   */
   branch: Branch;
   check: Check;
   commit: Commit;
