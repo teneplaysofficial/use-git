@@ -25,4 +25,4 @@ export type Category =
   | "stash"
   | "status"
   | "switch"
-  | "tag";
+  | "tag"

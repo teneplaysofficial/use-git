@@ -1,25 +1,38 @@
-import { Base } from "../utils/base";
-import { NormalizedBranch } from "./branch.normalized";
-import { BranchFlags } from "./branch.types";
+import type Base from "../utils/base"
+import { NormalizedBranch } from "./branch.normalized"
+import type { BranchFlags } from "./branch.types"
 
 export class Branch {
-  normalized: NormalizedBranch;
+  normalized: NormalizedBranch
 
   constructor(private git: Base) {
-    this.normalized = new NormalizedBranch(this);
+    this.normalized = new NormalizedBranch(this)
   }
 
   private parseList(output: string): string[] {
     return output
       .split("\n")
       .map((b) => b.replace(/^\*?\s+/, ""))
-      .filter(Boolean);
+      .filter(Boolean)
   }
 
+  /**
+   * Get the list of all branches (local and remote).
+   *
+   * @returns  A list of all branch names.
+   *
+   * @example
+   * ```ts
+   * import git from "use-git";
+   *
+   * console.log(await git.branch.all());
+   * // [ "main", "feature-branch", "remotes/origin/main", "remotes/origin/feature-branch" ]
+   * ```
+   */
   async all(): Promise<string[]> {
     return this.parseList(
-      await this.git.runCmd("branch", ["--all"] as BranchFlags[])
-    );
+      await this.git.runCmd("branch", ["--all"] as BranchFlags[]),
+    )
   }
 
   /**
@@ -36,7 +49,7 @@ export class Branch {
    * ```
    */
   current(): Promise<string> {
-    return this.git.runCmd("branch", ["--show-current"] as BranchFlags[]);
+    return this.git.runCmd("branch", ["--show-current"] as BranchFlags[])
   }
 
   /**
@@ -58,10 +71,10 @@ export class Branch {
      *
      * @default "HEAD"
      */
-    commit = "HEAD"
+    commit = "HEAD",
   ): Promise<string[]> {
     return this.parseList(
-      await this.git.runCmd("branch", ["--contains", commit] as any)
-    );
+      await this.git.runCmd("branch", ["--contains", commit]),
+    )
   }
 }

@@ -1,4 +1,4 @@
-import { defineConfig } from "tsdown";
+import { defineConfig } from "tsdown"
 
 export default defineConfig([
   {
@@ -8,9 +8,9 @@ export default defineConfig([
     dts: true,
     exports: {
       customExports(pkg) {
-        delete pkg["./package.json"];
-        return pkg;
+        delete pkg["./package.json"]
+        return pkg
       },
     },
   },
-]);
+])

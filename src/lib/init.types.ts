@@ -9,7 +9,7 @@ type InitFlags =
    * Create a bare repository.
    * If GIT_DIR environment is not set, it is set to the current working directory.
    */
-  | "--bare";
+  | "--bare"
 
 interface InitInputs {
   /**
@@ -17,26 +17,26 @@ interface InitInputs {
    *
    * @default "main" for Git 3.0
    */
-  "--initial-branch"?: "main" | "master";
+  "--initial-branch"?: "main" | "master"
 
   /**
    * Specify the directory from which templates will be used.
    *
    * {@link https://git-scm.com/docs/git-init#_template_directory}
    */
-  "--template"?: string;
+  "--template"?: string
 
   /**
    * Hash algorithm.
    *
    * @default "sha1"
    */
-  "--object-format"?: "sha1" | "sha256";
+  "--object-format"?: "sha1" | "sha256"
 
   /**
    * @default ".git"
    */
-  "--separate-git-dir"?: string;
+  "--separate-git-dir"?: string
 
   /**
    * Specify the given ref storage <format> for the repository.
@@ -46,13 +46,13 @@ interface InitInputs {
   "--ref-format"?: /**
    *  For loose files with packed-refs
    */
-  | "files"
+    | "files"
 
     /**
      * For the reftable format.
      * This format is experimental and its internals are subject to change
      */
-    | "reftable";
+    | "reftable"
 
   /**
    * Shared repository mode.
@@ -64,7 +64,7 @@ interface InitInputs {
     | "all"
     | "world"
     | "everybody"
-    | number;
+    | number
 }
 
-export type InitOptions = { flags?: InitFlags[] } & InitInputs;
+export type InitOptions = { flags?: InitFlags[] } & InitInputs

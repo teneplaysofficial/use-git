@@ -1,19 +1,19 @@
-import { exec } from "node:child_process";
-import { Category } from "../types";
+import { exec } from "node:child_process"
+import type { Category } from "../types"
 
-export abstract class Base {
-  cwd: string;
+export default abstract class Base {
+  cwd: string
 
   constructor(cwd: string = process.cwd()) {
-    this.cwd = cwd;
+    this.cwd = cwd
   }
 
   private buildCmd(categ: Category | "", args: string[] = []): string {
-    return ["git", categ, ...(args ?? [])].filter(Boolean).join(" ");
+    return ["git", categ, ...(args ?? [])].filter(Boolean).join(" ")
   }
 
   runCmd(categ: Category | "", args: string[] = []): Promise<string> {
-    const cmd = this.buildCmd(categ, args);
+    const cmd = this.buildCmd(categ, args)
 
     return new Promise((resolve, reject) => {
       exec(
@@ -25,15 +25,15 @@ export abstract class Base {
           if (err) {
             return reject(
               new Error(
-                `Error executing command:\n${cmd}\n${stderr || err.message}`
-              )
-            );
+                `Error executing command:\n${cmd}\n${stderr || err.message}`,
+              ),
+            )
           }
 
-          resolve(stdout.trim());
-        }
-      );
-    });
+          resolve(stdout.trim())
+        },
+      )
+    })
   }
 
   /**
@@ -42,12 +42,12 @@ export abstract class Base {
    * @returns {Promise<boolean>} - true if command succeeded, false otherwise
    */
   runCmdSafe(category: Category | "", args: string[] = []): Promise<boolean> {
-    const cmd = this.buildCmd(category, args);
+    const cmd = this.buildCmd(category, args)
 
     return new Promise((resolve) => {
       exec(cmd, { cwd: this.cwd }, (err) => {
-        resolve(!err);
-      });
-    });
+        resolve(!err)
+      })
+    })
   }
 }
