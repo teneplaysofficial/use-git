@@ -12,4 +12,12 @@ export class Check {
 
     return !res.length
   }
+
+  isInitialized(): Promise<boolean> {
+    return this.git.runCmdSafe("rev-parse", ["--git-dir"])
+  }
+
+  isInstalled(): Promise<boolean> {
+    return this.git.runCmdSafe("", ["--version"])
+  }
 }

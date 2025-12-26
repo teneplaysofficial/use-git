@@ -24,6 +24,6 @@ export type BranchFlags =
   | "--delete"
   | "-D"
   | "--unset-upstream"
-  | "--edit-description";
+  | "--edit-description"
 
-export type BranchOptions = { flags?: BranchFlags[] };
+export type BranchOptions = { flags?: BranchFlags[] }
