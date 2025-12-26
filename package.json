@@ -10,6 +10,10 @@
   },
   "homepage": "https://teneplaysofficial.github.io/use-git",
   "funding": "https://github.com/sponsors/teneplaysofficial",
+  "keywords": [
+    "git",
+    "promise-based"
+  ],
   "files": [
     "dist"
   ],
