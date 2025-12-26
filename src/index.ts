@@ -30,5 +30,5 @@ export class useGit extends Base {
   }
 }
 
-export const git = new useGit();
+export const git: useGit = new useGit();
 export default git;

@@ -3,6 +3,7 @@
   "displayName": "useGit",
   "description": "A robust, promise-based Git utility for Node.js",
   "version": "0.0.0",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/teneplaysofficial/use-git"

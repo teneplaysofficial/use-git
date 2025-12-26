@@ -3,7 +3,7 @@ import { Base } from "../utils/base";
 export class Check {
   constructor(private git: Base) {}
 
-  isRepo() {
+  isRepo(): Promise<boolean> {
     return this.git.runCmdSafe("rev-parse", ["--is-inside-work-tree"]);
   }
 
