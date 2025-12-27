@@ -53,9 +53,9 @@ export class Branch {
   }
 
   /**
-   * Only lists branches which contain the specified commit.
+   * List branches that contain a given commit or reference.
    *
-   * @returns A list of branches that contain the specified commit.
+   * @returns A list of branches that contain the given commit or reference.
    *
    * @example
    * ```ts
@@ -76,5 +76,92 @@ export class Branch {
     return this.parseList(
       await this.git.runCmd("branch", ["--contains", commit]),
     )
+  }
+
+  /**
+   * Create a new branch.
+   *
+   * @example
+   * ```ts
+   * await git.branch.create("feature")
+   * await git.branch.create("hotfix", "v1.0.0")
+   * ```
+   */
+  async create(
+    /** Name of the new branch */
+    name: string,
+    /** Optional start point (commit, tag, branch, or ref) */
+    startPoint?: string,
+  ): Promise<this> {
+    await this.git.runCmd("branch", [name, startPoint])
+
+    return this
+  }
+
+  /**
+   * Switch to an existing branch.
+   *
+   * @example
+   * ```ts
+   * await git.branch.switch("main")
+   * ```
+   */
+  async switch(
+    /** Branch name to switch to */
+    name: string,
+  ): Promise<this> {
+    await this.git.runCmd("switch", [name])
+
+    return this
+  }
+
+  /**
+   * Delete a local branch.
+   *
+   * @example
+   * ```ts
+   * await git.branch.delete("feature")
+   * await git.branch.delete("feature", { force: true })
+   * ```
+   */
+  async delete(
+    /** Branch name to delete */
+    name: string,
+    {
+      force = false,
+    }: {
+      /**
+       * Force deletion even if branch is not merged.
+       *
+       * @default false
+       */
+      force?: boolean
+    } = {},
+  ): Promise<this> {
+    await this.git.runCmd("branch", [force ? "-D" : "-d", name])
+
+    return this
+  }
+
+  /**
+   * Rename branch.
+   *
+   * @throws If the source branch does not exist
+   *
+   * @example
+   * ```ts
+   * await git.branch.rename("master", "main")
+   * await git.branch.rename("feature-old", "feature-new")
+   * ```
+   */
+  async rename(
+    /** The existing branch name */
+    oldName: string,
+    /** The existing branch name */
+    newName: string,
+  ): Promise<this> {
+    await this.git.runCmd("branch", ["-m", oldName, newName])
+
+    return this
   }
 }

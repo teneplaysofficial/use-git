@@ -32,8 +32,15 @@ export class useGit extends Base {
    */
   init: Init
 
-  constructor(opts: { cwd?: string } = { cwd: process.cwd() }) {
+  constructor(
+    opts: { cwd?: string; debug?: boolean } = {
+      cwd: process.cwd(),
+      debug: false,
+    },
+  ) {
     super(opts.cwd)
+
+    if (opts.debug) process.env.DEBUG = "use-git"
 
     this.branch = new Branch(this)
     this.check = new Check(this)
