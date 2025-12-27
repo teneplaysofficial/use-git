@@ -4,6 +4,7 @@ export type Category =
   | "branch"
   | "checkout"
   | "clone"
+  | "config"
   | "commit"
   | "diff"
   | "fetch"
