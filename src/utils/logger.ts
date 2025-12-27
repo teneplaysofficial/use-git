@@ -51,7 +51,9 @@ function write(level: LogLevel, message: string) {
 
 const logger = {
   debug(message: string) {
-    if (process.env.DEBUG) write("DEBUG", message)
+    if (!process.env.DEBUG) return
+
+    write("DEBUG", message)
   },
 
   notice(message: string) {
