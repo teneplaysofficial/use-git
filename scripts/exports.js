@@ -46,7 +46,7 @@ async function generateIndex(dir) {
   const lines = exports.filter(Boolean).sort((a, b) => a.localeCompare(b))
 
   const indexPath = path.join(dir, "index.ts")
-  const content = `// AUTO-GENERATED FILE - DO NOT EDIT MANUALLY${EOL}${lines.join(EOL)}`
+  const content = `// AUTO-GENERATED FILE - DO NOT EDIT MANUALLY${EOL}${EOL}${lines.join(EOL)}${EOL}`
 
   if (IS_CHECK) {
     try {

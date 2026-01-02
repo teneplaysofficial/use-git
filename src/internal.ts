@@ -59,11 +59,11 @@ function buildArgs<T extends { flags?: string[] }>(opts: T): string[] {
   const args: string[] = []
 
   if (opts.flags?.length) {
-    args.push(...opts.flags)
+    args.push(...new Set(opts.flags))
   }
 
   for (const [key, value] of Object.entries(opts)) {
-    if (key === "flags" || value === undefined) continue
+    if (value == null || !key.startsWith("--")) continue
 
     if (typeof value === "boolean") {
       if (value) args.push(key)
@@ -80,5 +80,21 @@ function quoteArg(d: string) {
   return `"${d.replace(/"/g, '\\"')}"`
 }
 
-export const utils = { buildCmd, runCmd, runCmdSafe, buildArgs, quoteArg }
+function mergeOpts<T extends object>(defaults: T, user: T | undefined) {
+  if (!user) return defaults
+
+  return {
+    ...defaults,
+    ...user,
+  }
+}
+
+export const utils = {
+  buildCmd,
+  runCmd,
+  runCmdSafe,
+  buildArgs,
+  quoteArg,
+  mergeOpts,
+}
 export default utils
