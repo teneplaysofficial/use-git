@@ -12,7 +12,7 @@ export class Commit {
     email?: string
   } | null = null
 
-  constructor(private git: Base) {}
+  constructor(protected git: Base) {}
 
   private flag(key: CommitFlagKeys): this {
     this.ctx.add(COMMIT_FLAGS[key])
@@ -107,7 +107,7 @@ export class Commit {
    * await git.commit.signOff.verbose.run()
    * ```
    */
-  async run() {
+  async commit() {
     await this.git.runCmd("commit", [...this.ctx])
 
     return this

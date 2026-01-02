@@ -1,3 +1,4 @@
+import { Add } from "./lib/add"
 import { Branch } from "./lib/branch"
 import { Check } from "./lib/check"
 import { Commit } from "./lib/commit"
@@ -7,6 +8,7 @@ import { Init } from "./lib/init"
 import Base from "./utils/base"
 
 export class useGit extends Base {
+  add: Add
   /**
    * List, create, or delete branches.
    *
@@ -42,6 +44,7 @@ export class useGit extends Base {
 
     if (opts.debug) process.env.DEBUG = "use-git"
 
+    this.add = new Add(this)
     this.branch = new Branch(this)
     this.check = new Check(this)
     this.config = new Config(this)
