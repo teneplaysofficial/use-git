@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - run: |
+          echo "::start-group::Build docs"
+          pnpm doc
+          echo "::end-group::"
+          echo "::start-group::Release Package"
+          echo "::info::Publishing package to npm"
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm publish
+          echo "::info::Publishing package to jsr"
+          npx jsr publish
+          echo "::end-group::"
+          - uses: actions/upload-pages-artifact@v4
+          with:
+            path: ./docs
+
+  deploy:
+    needs: release
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

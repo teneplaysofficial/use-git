@@ -1,11 +1,19 @@
-import { Base } from "./utils/base";
+import * as ug from "./lib/index"
+import { setCwd } from "./state"
+import type { Api } from "./types/api"
 
-export class useGit extends Base {
-  constructor(opts: { cwd?: string } = {}) {
-    const { cwd = process.cwd() } = opts;
-    super(cwd);
-  }
+interface CreateGit {
+  cwd?: string
+  debug?: boolean
 }
 
-export const git = new useGit();
-export default git;
+export function createGit({ cwd = ".", debug = false }: CreateGit = {}): Api {
+  if (debug) process.env.DEBUG = "true"
+
+  setCwd(cwd)
+
+  return Object.assign(Object.create(ug))
+}
+
+export const git = createGit()
+export default git
