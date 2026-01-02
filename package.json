@@ -39,6 +39,7 @@
     "doc": "typedoc",
     "exports": "node scripts/exports.js",
     "exports:check": "node scripts/exports.js --check",
+    "typecheck": "tsc --noEmit",
     "fix": "biome check --write",
     "lint": "biome check"
   },

@@ -3,7 +3,7 @@
   "name": "useGit API",
   "entryPoints": ["src/lib"],
   "entryPointStrategy": "expand",
-  "exclude": ["src/lib/index.ts"],
+  "exclude": ["src/lib/**/index.ts"],
   "excludeInternal": true,
   "excludePrivate": true,
   "excludeProtected": true

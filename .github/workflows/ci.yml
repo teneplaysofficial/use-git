@@ -22,9 +22,12 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: pnpm lint
-      - run: pnpm exports:check
-        continue-on-error: true
+      - if: always()
+        run: pnpm lint
+      - if: always()
+        run: pnpm exports:check
+      - if: always()
+        run: pnpm typecheck
 
   typedoc:
     runs-on: ubuntu-latest

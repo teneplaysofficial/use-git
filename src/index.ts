@@ -15,5 +15,5 @@ export function createGit({ cwd = ".", debug = false }: CreateGit = {}): Api {
   return Object.assign(Object.create(ug))
 }
 
-export const git = createGit()
+export const git: Api = createGit()
 export default git
