@@ -1,7 +1,9 @@
 {
   "name": "@tene/use-git",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "exports": "./src/index.ts",
-  "publish": { "include": ["src", "README.md", "LICENSE"] }
+  "publish": {
+    "include": ["src", "README.md", "LICENSE"]
+  }
 }

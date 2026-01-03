@@ -2,7 +2,7 @@
   "name": "use-git",
   "displayName": "useGit",
   "description": "A robust, promise-based Git utility for Node.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
