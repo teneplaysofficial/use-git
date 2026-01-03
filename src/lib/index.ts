@@ -2,6 +2,7 @@
 
 export * from "./add"
 export * from "./clone"
+export * from "./diff"
 export * from "./info"
 export * from "./init"
 export * from "./status"
