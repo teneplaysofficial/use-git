@@ -20,6 +20,7 @@ export interface DiffOptions {
     | "--quiet"
     | "--ignore-all-space"
     | "--ignore-space-at-eol"
+    | "--ignore-cr-at-eol"
   )[]
 }
 
@@ -130,7 +131,6 @@ export function diffStaged(
  *
  * @since 0.2.0
  */
-
 export function diffHead(
   this: Api,
   /**
@@ -223,34 +223,6 @@ export function diffFiles(
   return this.diff([fileA, fileB], undefined, {
     flags: ["--no-index"],
   })
-}
-
-/**
- * Get a list of files changed in the working tree.
- *
- * @returns Array of changed file paths
- *
- * @example
- * ```ts
- * const files = await git.diffChangedFiles()
- * // ["src/index.ts", "README.md"]
- * ```
- *
- * @see {@link getChangedFiles}
- * @see {@link diffWorkingTree}
- * @see {@link changedFileCount}
- *
- * @since 0.2.0
- */
-export async function diffChangedFiles(this: Api): Promise<string[]> {
-  const res = await this.diff(undefined, undefined, {
-    flags: ["--name-only"],
-  })
-
-  return res
-    .split("\n")
-    .map((f) => f.trim())
-    .filter(Boolean)
 }
 
 export interface DiffStats {
@@ -362,8 +334,12 @@ export async function hasDiff(this: Api): Promise<boolean> {
       flags: ["--quiet"],
     })
     return false
-  } catch {
-    return true
+  } catch (err) {
+    if (err instanceof Error && "exitCode" in err && err.exitCode === 1) {
+      return true
+    }
+
+    throw err
   }
 }
 
@@ -390,8 +366,12 @@ export async function hasStagedDiff(this: Api): Promise<boolean> {
       flags: ["--cached", "--quiet"],
     })
     return false
-  } catch {
-    return true
+  } catch (err) {
+    if (err instanceof Error && "exitCode" in err && err.exitCode === 1) {
+      return true
+    }
+
+    throw err
   }
 }
 
@@ -416,7 +396,10 @@ export async function getStagedFiles(this: Api): Promise<string[]> {
     flags: ["--cached", "--name-only"],
   })
 
-  return res.split("\n").filter(Boolean)
+  return res
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)
 }
 
 /**
@@ -427,8 +410,10 @@ export async function getStagedFiles(this: Api): Promise<string[]> {
  * @example
  * ```ts
  * const files = await git.getChangedFiles()
+ * // ["src/index.ts", "README.md"]
  * ```
  *
+ * @see {@link diffWorkingTree}
  * @see {@link changedFileCount}
  * @see {@link getStagedFiles}
  *
@@ -439,7 +424,10 @@ export async function getChangedFiles(this: Api): Promise<string[]> {
     flags: ["--name-only"],
   })
 
-  return res.split("\n").filter(Boolean)
+  return res
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)
 }
 
 /**
@@ -477,14 +465,9 @@ export async function changedFileCount(this: Api): Promise<number> {
  * @since 0.2.0
  */
 export async function stagedFileCount(this: Api): Promise<number> {
-  const res = await this.diff(undefined, undefined, {
-    flags: ["--cached", "--name-only"],
-  })
+  const files = await this.getStagedFiles()
 
-  return res
-    .split("\n")
-    .map((l) => l.trim())
-    .filter(Boolean).length
+  return files.length
 }
 
 /**
@@ -550,8 +533,12 @@ export async function hasOnlyWhitespaceChanges(this: Api): Promise<boolean> {
     })
 
     return true
-  } catch {
-    return false
+  } catch (err) {
+    if (err instanceof Error && "exitCode" in err && err.exitCode === 1) {
+      return false
+    }
+
+    throw err
   }
 }
 
@@ -575,12 +562,16 @@ export async function hasOnlyEOLChanges(this: Api): Promise<boolean> {
 
   try {
     await this.diff(undefined, undefined, {
-      flags: ["--ignore-space-at-eol", "--quiet"],
+      flags: ["--ignore-cr-at-eol", "--quiet"],
     })
 
     return true
-  } catch {
-    return false
+  } catch (err) {
+    if (err instanceof Error && "exitCode" in err && err.exitCode === 1) {
+      return false
+    }
+
+    throw err
   }
 }
 
@@ -598,7 +589,6 @@ export async function hasOnlyEOLChanges(this: Api): Promise<boolean> {
  *
  * @since 0.2.0
  */
-
 export async function hasBinaryChanges(this: Api): Promise<boolean> {
   const res = await this.diff(undefined, undefined, {
     flags: ["--numstat"],

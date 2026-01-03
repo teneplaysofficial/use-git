@@ -143,15 +143,11 @@ export async function hasUntrackedFiles(this: Api): Promise<boolean> {
 }
 
 /**
- * Get the working tree contains untracked files.
+ * Get a list of untracked files in the working tree.
  *
  * @example
  * ```ts
- * const untracked = await git.hasUntrackedFiles()
- *
- * if (await git.hasUntrackedFiles()) {
- *   console.log("There are untracked files in the working tree")
- * }
+ * const untracked = await git.getUntrackedFiles()
  *
  * if (untracked.length > 0) {
  *   console.log("Untracked files:", untracked.join(", "))
