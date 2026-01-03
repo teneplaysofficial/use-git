@@ -42,7 +42,7 @@ export function isRepo(): Promise<boolean> {
  *
  * @since 0.1.0
  */
-export async function rawVersion() {
+export async function rawVersion(): Promise<string> {
   if (_cache.version?.raw) return _cache.version.raw
 
   const raw = await utils.runCmd("", ["--version"])
