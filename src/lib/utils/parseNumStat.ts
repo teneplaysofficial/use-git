@@ -1,4 +1,4 @@
-import type { DiffStats } from "../diff"
+import type { DiffStats } from "../types"
 
 /**
  * @since 0.2.0

@@ -1,33 +1,6 @@
 import utils from "../internal"
 import type { Api } from "../types/api"
-
-export interface InitOptions {
-  flags?: ("--quiet" | "--bare")[]
-
-  /**
-   * Use branch-name for the initial branch in the newly created repository.
-   *
-   * @default "main"
-   */
-  "--initial-branch"?: "main" | "master"
-
-  /**
-   * Specify the directory from which templates will be used.
-   */
-  "--template"?: string
-
-  /**
-   * Hash algorithm.
-   *
-   * @default "sha1"
-   */
-  "--object-format"?: "sha1" | "sha256"
-
-  /**
-   * @default ".git"
-   */
-  "--separate-git-dir"?: string
-}
+import type { InitOptions } from "./types/InitOptions"
 
 /**
  * Create an empty Git repository or reinitialize an existing one

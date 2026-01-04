@@ -1,9 +1,9 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "name": "useGit API",
-  "entryPoints": ["src/lib"],
+  "entryPoints": ["src/lib/index.ts"],
   "entryPointStrategy": "expand",
-  "exclude": ["src/lib/**/index.ts"],
+  "sort": ["alphabetical"],
   "excludeInternal": true,
   "excludePrivate": true,
   "excludeProtected": true

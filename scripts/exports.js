@@ -6,7 +6,7 @@ const ROOT = process.cwd()
 const LIB_DIR = path.join(ROOT, "src/lib")
 const IS_CHECK = process.argv.includes("--check")
 const outOfSyncFiles = []
-const IGNORE_FOLDERS = ["checks", "utils"]
+const IGNORE_FOLDERS = ["cache", "utils"]
 
 const hasIndex = async (dir) =>
   fs
