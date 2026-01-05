@@ -2,6 +2,7 @@
 
 export * from "./AddOptions"
 export * from "./CloneOptions"
+export * from "./CommitOptions"
 export * from "./DiffOptions"
 export * from "./DiffStats"
 export * from "./InitOptions"
