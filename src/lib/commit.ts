@@ -30,24 +30,24 @@ import type { CommitOptions } from "./types/CommitOptions"
  */
 export async function commit(
   this: Api,
-  message?: string,
+  message: string | undefined,
   description?: string,
 ): Promise<Api>
 export async function commit(
   this: Api,
-  message?: string,
+  message: string | undefined,
   opts?: CommitOptions,
 ): Promise<Api>
 export async function commit(
   this: Api,
-  message?: string,
+  message: string | undefined,
   description?: string,
   opts?: CommitOptions,
 ): Promise<Api>
 
 export async function commit(
   this: Api,
-  message?: string,
+  message: string | undefined,
   descOrOpts?: string | CommitOptions,
   opts: CommitOptions = {},
 ): Promise<Api> {
