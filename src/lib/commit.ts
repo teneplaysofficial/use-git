@@ -64,8 +64,8 @@ export async function commit(
     "commit",
     [
       ...utils.buildArgs(options),
-      ...(message ? [`-m ${message}`] : []),
-      ...(description ? [`-m ${description}`] : []),
+      ...(message ? ["-m", message] : []),
+      ...(description ? ["-m", description] : []),
     ].filter(Boolean),
   )
 

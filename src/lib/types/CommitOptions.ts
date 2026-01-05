@@ -1,7 +1,6 @@
 export interface CommitOptions {
   flags?: (
     | "--amend"
-    | "--verify"
     | "--no-verify"
     | "--signoff"
     | "--no-edit"
@@ -57,7 +56,7 @@ export interface CommitOptions {
    * - true  → --gpg-sign
    * - string → --gpg-sign=<keyid>
    */
-  "--gpgSign"?: true | string
+  "--gpg-sign"?: true | string
 
   "--squash"?: string
 
