@@ -1,37 +1,50 @@
-import { exec } from "node:child_process"
+import { spawn } from "node:child_process"
 import logger from "./logger"
 import { cwd } from "./state"
 import type { Category } from "./types/category"
 
 export type GitArgs = ReadonlyArray<string | boolean | undefined>
 
-function buildCmd(categ: Category | "", args: GitArgs = []): string {
-  return ["git", categ, ...(args ?? [])].filter(Boolean).join(" ")
-}
-
 function runCmd(categ: Category | "", args: GitArgs = []): Promise<string> {
-  const cmd = buildCmd(categ, args)
+  const cmd = [categ, ...args].filter(Boolean) as string[]
 
-  logger.debug(`running: ${logger.highlight(cmd)}`)
+  logger.debug(`running: ${logger.highlight(`git ${cmd.join(" ")}`)}`)
 
   return new Promise((resolve, reject) => {
-    exec(
-      cmd,
-      {
-        cwd,
-      },
-      (err, stdout, stderr) => {
-        if (err) {
-          return reject(
-            new Error(
-              `Error executing command:\n${cmd}\n${stderr || err.message}`,
-            ),
-          )
-        }
+    const child = spawn("git", cmd, {
+      cwd,
+    })
 
-        resolve(stdout.trim())
-      },
-    )
+    let stdout = ""
+    let stderr = ""
+
+    child.stdout.on("data", (data) => {
+      stdout += data.toString()
+    })
+
+    child.stderr.on("data", (data) => {
+      stderr += data.toString()
+    })
+
+    child.on("error", (err) => {
+      reject(
+        new Error(
+          `Error executing command git ${cmd.join(" ")}: ${err.message}`,
+        ),
+      )
+    })
+
+    child.on("close", (code) => {
+      if (code !== 0) {
+        return reject(
+          new Error(
+            `Git command failed (exit ${code}):\n${cmd.join(" ")}\n${stderr.trim()}`,
+          ),
+        )
+      }
+
+      resolve(stdout.trim())
+    })
   })
 }
 
@@ -44,13 +57,19 @@ function runCmdSafe(
   category: Category | "",
   args: GitArgs = [],
 ): Promise<boolean> {
-  const cmd = buildCmd(category, args)
+  const cmd = [category, ...args].filter(Boolean) as string[]
 
-  logger.debug(`running: ${logger.highlight(cmd)}`)
+  logger.debug(`running: ${logger.highlight(`git ${cmd.join(" ")}`)}`)
 
   return new Promise((resolve) => {
-    exec(cmd, { cwd }, (err) => {
-      resolve(!err)
+    const child = spawn("git", cmd, { cwd })
+
+    child.on("error", () => {
+      resolve(false)
+    })
+
+    child.on("close", (code) => {
+      resolve(code === 0)
     })
   })
 }
@@ -76,10 +95,6 @@ function buildArgs<T extends { flags?: string[] }>(opts: T): string[] {
   return args
 }
 
-function quoteArg(d: string) {
-  return `"${d.replace(/"/g, '\\"')}"`
-}
-
 function mergeOpts<T extends object>(defaults: T, user: T | undefined) {
   if (!user) return defaults
 
@@ -90,11 +105,9 @@ function mergeOpts<T extends object>(defaults: T, user: T | undefined) {
 }
 
 export const utils = {
-  buildCmd,
   runCmd,
   runCmdSafe,
   buildArgs,
-  quoteArg,
   mergeOpts,
 }
 export default utils
