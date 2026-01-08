@@ -14,5 +14,8 @@ export function restoreFromHead(
   this: Api,
   paths: string | string[],
 ): Promise<Api> {
-  return this.restore(paths, { "--source": "HEAD" })
+  return this.restore(paths, {
+    flags: ["--staged", "--worktree"],
+    "--source": "HEAD",
+  })
 }

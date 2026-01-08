@@ -22,6 +22,7 @@ import type { RestoreOptions } from "./types/RestoreOptions"
  * // Restore both index and working tree
  * await git.restore("file.txt", {
  *   flags: ["--staged", "--worktree"],
+ *   "--source": "HEAD~1",
  * })
  * ```
  *
