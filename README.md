@@ -24,11 +24,3 @@ pnpm add use-git
 ## Documentation
 
 Full API reference and usage guides are available at https://teneplaysofficial.github.io/use-git.
-
-## API
-
-All methods return the same `git` instance, allowing fluent chaining.
-
-```ts
-await git.init().add(".").commit("chore: initial commit").push();
-```
