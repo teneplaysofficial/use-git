@@ -1,5 +1,5 @@
 import utils from "../../internal"
-import type { CommitOptions } from "../types/CommitOptions"
+import type { CommitOptions } from "../types"
 
 /**
  * Record changes to the repository.

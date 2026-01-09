@@ -1,5 +1,5 @@
 import utils from "../../internal"
-import type { RestoreOptions } from "../types/RestoreOptions"
+import type { RestoreOptions } from "../types"
 
 /**
  * Restore working tree files.

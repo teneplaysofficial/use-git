@@ -1,4 +1,4 @@
-import type { DiffStats } from "../types/DiffStats"
+import type { DiffStats } from "../types"
 import { parseNumStat } from "../utils"
 import { diff } from "./diff"
 

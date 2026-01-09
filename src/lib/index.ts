@@ -1,6 +1,7 @@
 // AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
 
 export * from "./add"
+export * from "./branch"
 export * from "./clone"
 export * from "./commit"
 export * from "./diff"

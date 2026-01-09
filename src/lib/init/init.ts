@@ -1,5 +1,5 @@
 import utils from "../../internal"
-import type { InitOptions } from "../types/InitOptions"
+import type { InitOptions } from "../types"
 
 /**
  * Create an empty Git repository or reinitialize an existing one

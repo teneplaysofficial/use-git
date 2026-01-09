@@ -1,6 +1,5 @@
 import utils from "../../internal"
-import type { IsDirtyOptions } from "../types/IsDirtyOptions"
-import type { StatusOptions } from "../types/StatusOptions"
+import type { IsDirtyOptions, StatusOptions } from "../types"
 import { status } from "./status"
 
 /**
