@@ -1,4 +1,13 @@
 export interface BranchOptions {
+  /**
+   * Branch operation flags.
+   *
+   * @description
+   * Some flags require branch names:
+   *  - `--delete`, `-D`
+   *  - `--move`, `-M`
+   *  - `--copy`, `-C`
+   */
   flags?: (
     | "--all"
     | "--show-current"
@@ -31,7 +40,13 @@ export interface BranchOptions {
    */
   "--column"?: string
 
+  /**
+   * Sort branch output by the specified key.
+   */
   "--sort"?: string
 
+  /**
+   * Minimum abbreviation length for object names.
+   */
   "--abbrev"?: string
 }

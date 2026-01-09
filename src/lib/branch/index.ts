@@ -1,5 +1,15 @@
 // AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
 
 export * from "./branch"
+export * from "./branchExists"
+export * from "./copyBranch"
+export * from "./createBranch"
 export * from "./currentBranch"
+export * from "./deleteBranch"
+export * from "./getDefaultBranch"
 export * from "./listAllBranches"
+export * from "./listBranches"
+export * from "./listRemoteBranches"
+export * from "./renameBranch"
+export * from "./resetBranchToHead"
+export * from "./setBranchUpstream"

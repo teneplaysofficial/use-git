@@ -1,6 +1,14 @@
 import { branch } from "./branch"
 
 /**
+ * Get the current branch name.
+ *
+ * @example
+ * ```ts
+ * await getCurrentBranch()
+ * // main
+ * ```
+ *
  * @since 1.0.0
  */
 export function currentBranch(): Promise<string> {
