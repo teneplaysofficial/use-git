@@ -1,5 +1,5 @@
 import utils from "../../internal"
-import type { CloneOptions } from "../types/CloneOptions"
+import type { CloneOptions } from "../types"
 
 /**
  * Clone a repository into a new directory

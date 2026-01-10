@@ -1,5 +1,5 @@
 import utils from "../../internal"
-import type { StatusOptions } from "../types/StatusOptions"
+import type { StatusOptions } from "../types"
 
 /**
  * Show the working tree status.

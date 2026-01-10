@@ -1,6 +1,10 @@
 // AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
 
 export * from "./AddOptions"
+export * from "./BranchListFormat"
+export * from "./BranchListResult"
+export * from "./BranchListResultMap"
+export * from "./BranchOptions"
 export * from "./CloneOptions"
 export * from "./CommitOptions"
 export * from "./DiffOptions"
