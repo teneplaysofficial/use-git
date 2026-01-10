@@ -107,7 +107,7 @@ function mergeOpts<T extends object>(defaults: T, user: T | undefined) {
 function makeList(data: string): string[] {
   return data
     .split(/\r?\n/)
-    .map((b) => b.replace(/^\*?\s+/, ""))
+    .map((b) => b.replace(/^\s*[*+]?[\s]*/, ""))
     .filter(Boolean)
 }
 
