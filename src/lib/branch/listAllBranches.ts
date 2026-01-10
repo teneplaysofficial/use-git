@@ -30,7 +30,7 @@ export async function listAllBranches<T extends BranchListFormat>(
       const name = b.replace(/^remotes\//, "")
 
       if (name.includes("/HEAD ->")) {
-        head = name.split("->")[1].trim()
+        head = name.split(" -> ")[1]
       } else {
         remote.push(name)
       }

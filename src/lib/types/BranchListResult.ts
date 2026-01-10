@@ -1,14 +1,5 @@
 import type { BranchListFormat } from "./BranchListFormat"
-
-type BranchListResultMap = {
-  flat: string[]
-  json: {
-    local: string[]
-    remote: string[]
-    head?: string
-  }
-  csv: string
-}
+import type { BranchListResultMap } from "./BranchListResultMap"
 
 export type BranchListResult<T extends BranchListFormat> =
   BranchListResultMap[T]

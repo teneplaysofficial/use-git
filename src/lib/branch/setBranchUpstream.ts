@@ -14,7 +14,7 @@ export function setBranchUpstream(
   branchName: string,
   upstream: string,
 ): Promise<string> {
-  return branch([branchName, upstream], {
-    flags: ["--set-upstream"],
+  return branch(branchName, {
+    "--set-upstream-to": upstream,
   })
 }

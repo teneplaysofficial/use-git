@@ -29,8 +29,10 @@ export async function renameBranch(
 ): Promise<string> {
   opts = utils.mergeOpts({ force: false }, opts)
 
-  if (await branchExists(to)) {
-    ;`Cannot rename branch "${from}" to "${to}": a branch named "${to}" already exists. Use { force: true } to overwrite it.`
+  if (!opts.force && (await branchExists(to))) {
+    throw new Error(
+      `Cannot rename branch "${from}" to "${to}": a branch named "${to}" already exists. Use { force: true } to overwrite it.`,
+    )
   }
 
   return branch([from, to], {

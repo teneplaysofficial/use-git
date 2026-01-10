@@ -25,7 +25,7 @@ export interface BranchOptions {
     | "--no-column"
     | "--quiet"
     | "--no-abbrev"
-    | "--set-upstream"
+    | "--unset-upstream"
   )[]
 
   /**
@@ -49,4 +49,15 @@ export interface BranchOptions {
    * Minimum abbreviation length for object names.
    */
   "--abbrev"?: string
+
+  /**
+   * Set upstream branch.
+   *
+   * @description
+   * Sets the upstream branch explicitly, typically in the form: `remote/branch`.
+   *
+   * @example
+   * "origin/main"
+   */
+  "--set-upstream-to"?: string
 }

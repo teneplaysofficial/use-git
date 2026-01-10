@@ -5,7 +5,7 @@ import { branch } from "./branch"
  *
  * @example
  * ```ts
- * await getCurrentBranch()
+ * await currentBranch()
  * // main
  * ```
  *

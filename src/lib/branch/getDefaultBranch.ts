@@ -7,6 +7,9 @@ import { listAllBranches } from "./listAllBranches"
  */
 export async function getDefaultBranch(): Promise<string | undefined> {
   const res = await listAllBranches("json")
+  if (!res.head) return undefined
 
-  return res.head?.split("/")[1]
+  const parts = res.head.split("/")
+
+  return parts.length > 1 ? parts.slice(1).join("/") : undefined
 }
