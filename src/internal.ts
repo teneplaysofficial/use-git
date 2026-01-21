@@ -104,10 +104,20 @@ function mergeOpts<T extends object>(defaults: T, user: T | undefined) {
   }
 }
 
-function makeList(data: string): string[] {
+function makeList(
+  data: string,
+  prefixes: string[] = ["*", "+"],
+  to = "",
+): string[] {
+  const escaped = prefixes
+    .map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|")
+
+  const PREFIX_REGEX = new RegExp(`^\\s*(?:${escaped})?[\\s]*`)
+
   return data
     .split(/\r?\n/)
-    .map((b) => b.replace(/^\s*[*+]?[\s]*/, ""))
+    .map((b) => b.replace(PREFIX_REGEX, to))
     .filter(Boolean)
 }
 
