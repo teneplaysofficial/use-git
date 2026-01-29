@@ -1,6 +1,7 @@
 // AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
 
 export * from "./createAnnotatedTag"
+export * from "./createTag"
 export * from "./deleteTag"
 export * from "./getSemverTags"
 export * from "./getTags"
