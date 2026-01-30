@@ -37,6 +37,7 @@
     "release": "release-hub",
     "build": "tsdown",
     "doc": "typedoc",
+    "gen": "pnpm exports",
     "exports": "node scripts/exports.js",
     "exports:check": "node scripts/exports.js --check",
     "typecheck": "tsc --noEmit",
@@ -54,6 +55,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "release-hub": "^1.0.0-beta.0",
+    "ts-morph": "^27.0.2",
     "tsdown": "^0.20.0",
     "typedoc": "^0.28.15",
     "typescript": "^5.9.3"

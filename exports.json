@@ -1,0 +1,759 @@
+{
+  "generatedAt": "2026-01-30T07:14:37.375Z",
+  "totalExports": 94,
+  "duplicateCount": 0,
+  "exports": [
+    {
+      "name": "add",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/add/add.ts"],
+      "hint": null
+    },
+    {
+      "name": "AddOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/AddOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "branch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/branch.ts"],
+      "hint": null
+    },
+    {
+      "name": "branchExists",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/branchExists.ts"],
+      "hint": null
+    },
+    {
+      "name": "BranchListFormat",
+      "kind": "TypeAliasDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/BranchListFormat.ts"],
+      "hint": null
+    },
+    {
+      "name": "BranchListResult",
+      "kind": "TypeAliasDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/BranchListResult.ts"],
+      "hint": null
+    },
+    {
+      "name": "BranchListResultMap",
+      "kind": "TypeAliasDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/BranchListResultMap.ts"],
+      "hint": null
+    },
+    {
+      "name": "BranchOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/BranchOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "Category",
+      "kind": "TypeAliasDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/types/category.ts"],
+      "hint": null
+    },
+    {
+      "name": "changedFileCount",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/changedFileCount.ts"],
+      "hint": null
+    },
+    {
+      "name": "clone",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/clone/clone.ts"],
+      "hint": null
+    },
+    {
+      "name": "CloneOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/CloneOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "commit",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commit.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitAll",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitAll.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitAmend",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitAmend.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitEmpty",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitEmpty.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitFixup",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitFixup.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitNoEdit",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitNoEdit.ts"],
+      "hint": null
+    },
+    {
+      "name": "CommitOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/CommitOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitReuseMessage",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitReuseMessage.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitSignoff",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitSignoff.ts"],
+      "hint": null
+    },
+    {
+      "name": "commitWithAuthor",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/commit/commitWithAuthor.ts"],
+      "hint": null
+    },
+    {
+      "name": "copyBranch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/copyBranch.ts"],
+      "hint": null
+    },
+    {
+      "name": "createAnnotatedTag",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/createAnnotatedTag.ts"],
+      "hint": null
+    },
+    {
+      "name": "createBranch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/createBranch.ts"],
+      "hint": null
+    },
+    {
+      "name": "createTag",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/createTag.ts"],
+      "hint": null
+    },
+    {
+      "name": "CreateTagOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/CreateTagOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "currentBranch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/currentBranch.ts"],
+      "hint": null
+    },
+    {
+      "name": "deleteBranch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/deleteBranch.ts"],
+      "hint": null
+    },
+    {
+      "name": "deleteTag",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/deleteTag.ts"],
+      "hint": null
+    },
+    {
+      "name": "diff",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diff.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffCommits",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffCommits.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffFiles",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffFiles.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffHead",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffHead.ts"],
+      "hint": null
+    },
+    {
+      "name": "DiffOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/DiffOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffRange",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffRange.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffStaged",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffStaged.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffStats",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffStats.ts"],
+      "hint": null
+    },
+    {
+      "name": "DiffStats",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/DiffStats.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffStatsCommits",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffStatsCommits.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffStatsStaged",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffStatsStaged.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffStatStagedSummary",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffStatStagedSummary.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffStatSummary",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffStatSummary.ts"],
+      "hint": null
+    },
+    {
+      "name": "diffWorkingTree",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/diffWorkingTree.ts"],
+      "hint": null
+    },
+    {
+      "name": "getChangedFiles",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/getChangedFiles.ts"],
+      "hint": null
+    },
+    {
+      "name": "getDefaultBranch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/getDefaultBranch.ts"],
+      "hint": null
+    },
+    {
+      "name": "getSemverTags",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/getSemverTags.ts"],
+      "hint": null
+    },
+    {
+      "name": "getStagedFiles",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/getStagedFiles.ts"],
+      "hint": null
+    },
+    {
+      "name": "getTags",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/getTags.ts"],
+      "hint": null
+    },
+    {
+      "name": "getUntrackedFiles",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/status/getUntrackedFiles.ts"],
+      "hint": null
+    },
+    {
+      "name": "GitArgs",
+      "kind": "TypeAliasDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/internal.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasBinaryChanges",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/hasBinaryChanges.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasDiff",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/hasDiff.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasOnlyEOLChanges",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/hasOnlyEOLChanges.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasOnlyWhitespaceChanges",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/hasOnlyWhitespaceChanges.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasStagedDiff",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/hasStagedDiff.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasTag",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/hasTag.ts"],
+      "hint": null
+    },
+    {
+      "name": "hasUntrackedFiles",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/status/hasUntrackedFiles.ts"],
+      "hint": null
+    },
+    {
+      "name": "init",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/init/init.ts"],
+      "hint": null
+    },
+    {
+      "name": "InitOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/InitOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "isCleanWorkingTree",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/status/isCleanWorkingTree.ts"],
+      "hint": null
+    },
+    {
+      "name": "isDirty",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/status/isDirty.ts"],
+      "hint": null
+    },
+    {
+      "name": "IsDirtyOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/IsDirtyOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "isGitInstalled",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/info/isGitInstalled.ts"],
+      "hint": null
+    },
+    {
+      "name": "isInitialized",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/rev-parse/isInitialized.ts"],
+      "hint": null
+    },
+    {
+      "name": "isRepo",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/rev-parse/isRepo.ts"],
+      "hint": null
+    },
+    {
+      "name": "isSemverTag",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/isSemverTag.ts"],
+      "hint": null
+    },
+    {
+      "name": "isValidTagName",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/isValidTagName.ts"],
+      "hint": null
+    },
+    {
+      "name": "listAllBranches",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/listAllBranches.ts"],
+      "hint": null
+    },
+    {
+      "name": "listBranches",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/listBranches.ts"],
+      "hint": null
+    },
+    {
+      "name": "listRemoteBranches",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/listRemoteBranches.ts"],
+      "hint": null
+    },
+    {
+      "name": "parseNumStat",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/utils/parseNumStat.ts"],
+      "hint": null
+    },
+    {
+      "name": "platform",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/info/platform.ts"],
+      "hint": null
+    },
+    {
+      "name": "rawVersion",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/info/rawVersion.ts"],
+      "hint": null
+    },
+    {
+      "name": "renameBranch",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/renameBranch.ts"],
+      "hint": null
+    },
+    {
+      "name": "resetBranchToHead",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/resetBranchToHead.ts"],
+      "hint": null
+    },
+    {
+      "name": "restore",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restore.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreAll",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreAll.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreAllFromHead",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreAllFromHead.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreAllStaged",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreAllStaged.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreBoth",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreBoth.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreFrom",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreFrom.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreFromHead",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreFromHead.ts"],
+      "hint": null
+    },
+    {
+      "name": "RestoreOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/RestoreOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreStaged",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreStaged.ts"],
+      "hint": null
+    },
+    {
+      "name": "restoreWorktree",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/restore/restoreWorktree.ts"],
+      "hint": null
+    },
+    {
+      "name": "setBranchUpstream",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/branch/setBranchUpstream.ts"],
+      "hint": null
+    },
+    {
+      "name": "setCwd",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/state.ts"],
+      "hint": null
+    },
+    {
+      "name": "stagedFileCount",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/diff/stagedFileCount.ts"],
+      "hint": null
+    },
+    {
+      "name": "status",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/status/status.ts"],
+      "hint": null
+    },
+    {
+      "name": "StatusOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/StatusOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "tag",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/tag/tag.ts"],
+      "hint": null
+    },
+    {
+      "name": "TagOptions",
+      "kind": "InterfaceDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/types/TagOptions.ts"],
+      "hint": null
+    },
+    {
+      "name": "version",
+      "kind": "FunctionDeclaration",
+      "count": 1,
+      "isDuplicate": false,
+      "files": ["src/lib/info/version.ts"],
+      "hint": null
+    }
+  ]
+}
