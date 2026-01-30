@@ -1,5 +1,5 @@
 import utils from "../../internal"
-import type { TagOptions } from "../types"
+import type { CreateTagOptions, TagOptions } from "../types"
 import { tag } from "./tag"
 
 /**
@@ -45,14 +45,7 @@ export function createAnnotatedTag(
    * @example "Production release for 2024"
    */
   message: string,
-  opts: {
-    /**
-     * Whether to forcibly replace an existing tag.
-     *
-     * @default false
-     */
-    force?: boolean
-  } = {},
+  opts: CreateTagOptions = {},
 ): Promise<string> {
   opts = utils.mergeOpts(
     {

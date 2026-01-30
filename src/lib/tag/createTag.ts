@@ -1,6 +1,6 @@
 import utils from "../../internal"
 import { tag } from "../tag"
-import type { TagOptions } from "../types"
+import type { CreateTagOptions, TagOptions } from "../types"
 
 /**
  * Creates a lightweight Git tag.
@@ -34,14 +34,7 @@ export function createTag(
    * @example "hotfix-1"
    */
   tagName: string,
-  opts: {
-    /**
-     * Whether to forcibly replace an existing tag.
-     *
-     * @default false
-     */
-    force?: boolean
-  } = {},
+  opts: CreateTagOptions = {},
 ): Promise<string> {
   opts = utils.mergeOpts(
     {
